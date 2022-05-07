@@ -32,6 +32,11 @@ class Index
     }
 
 
+    public function getTest():Json{
+        return json("helloworld");
+    }
+
+
     /**
      * 获取todo list
      * @return Json
