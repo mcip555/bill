@@ -33,7 +33,7 @@ class Index
 
 
     public function getTest():Json{
-        return json("helloworld");
+        return Db::query("select version()");
     }
 
 
