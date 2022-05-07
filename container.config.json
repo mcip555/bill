@@ -12,7 +12,7 @@
 	"policyThreshold": 60,                      
 	"envParams": {},                            
 	"customLogs": "/app/runtime/log/*",                     
-	"dataBaseName":"thinkphp_demo",             
+	"dataBaseName":"bill",             
 	"executeSQLs":[
 		"CREATE DATABASE IF NOT EXISTS thinkphp_demo;",
 		"USE thinkphp_demo;",
