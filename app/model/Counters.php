@@ -16,7 +16,7 @@ use think\Model;
 // Counters 定义数据库model
 class Counters extends Model
 {
-    protected $table = 'Counters';
+    protected $table = 'Bill';
     public $id;
     public $count;
     public $createdAt;
