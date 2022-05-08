@@ -35,19 +35,13 @@ class Balance
             }
             
             $balanceList = BalanceService::getBalanceByCardId($cardId);
-            $res = [
-                "code" => 0,
-                "data" => $balanceList
-            ];
+
+            $res = Util::res(0,$balanceList,"");
             Log::write('getBalanceByCardId:'.json_encode($res));
             return json($res);
 
         }catch(Exception $e){
-            $res = [
-                "code" => -1,
-                "data" => [],
-                "errorMsg" => ("根据卡ID获取余额列表" . $e->getMessage())
-            ];
+            $res = Util::res(-1,[],"根据卡ID获取余额列表");
             Log::write('getBalanceByCardId: '.json_encode($res));
             return json($res);
         }
