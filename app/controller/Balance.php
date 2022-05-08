@@ -13,12 +13,12 @@ namespace app\controller;
 
 use Error;
 use Exception;
-use app\model\Counters;
+use app\service\Balance;
 use think\response\Html;
 use think\response\Json;
 use think\facade\Log;
 
-class Index
+class Balance
 {
 
     /**
@@ -29,6 +29,42 @@ class Index
     {
         # html路径: ../view/index.html
         return response(file_get_contents(dirname(dirname(__FILE__)).'/view/index.html'));
+    }
+
+    /**
+     * 根据卡ID获取余额列表
+     * @param $cardId 卡ID不能为空
+     * @return Json
+     */
+    public function getBalanceByCardId($cardId):Json{
+        try{
+            if(!$cardId){
+                $res = [
+                    "code" => -2,
+                    "data" => [],
+                    "errorMsg" => ("cardId不能为空")
+                ];
+                Log::write('getBalanceByCardId:'.json_encode($res));
+                return json($res);
+            }
+            
+            $balanceList = (new Balance)->getBalanceByCardId($cardId);
+            $res = [
+                "code" => 0,
+                "data" => $balanceList
+            ];
+            Log::write('getBalanceByCardId:'.json_encode($res));
+            return json($res);
+
+        }catch(Exception $e){
+            $res = [
+                "code" => -1,
+                "data" => [],
+                "errorMsg" => ("根据卡ID获取余额列表" . $e->getMessage())
+            ];
+            Log::write('getBalanceByCardId: '.json_encode($res));
+            return json($res);
+        }
     }
 
 

@@ -12,13 +12,14 @@
 namespace app\model;
 
 use think\Model;
+use app\model\Balance;
 
 // Counters 定义数据库model
-class Counters extends Model
+class Balance extends Model
 {
-    protected $table = 'Bill';
-    public $id;
-    public $count;
-    public $createdAt;
-    public $updateAt;
+    public function getBalanceByCardId($cardId){
+        $BalanceList = Balance::where('cardId',$cardId)->select();
+        return $BalanceList;
+    }
+
 }
