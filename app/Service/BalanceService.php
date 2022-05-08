@@ -18,7 +18,7 @@ use app\model\Balance;
 // Counters 定义数据库model
 class BalanceService extends Model
 {
-    public function getBalanceByCardId($cardId){
+    public static function getBalanceByCardId($cardId){
         try{
             $BalanceList = Balance::where('cardId',$cardId)->select();
             return $BalanceList;

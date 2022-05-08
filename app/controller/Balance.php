@@ -34,7 +34,7 @@ class Balance
                 return json($res);
             }
             
-            $balanceList = (new BalanceService)->getBalanceByCardId($cardId);
+            $balanceList = BalanceService::getBalanceByCardId($cardId);
             $res = [
                 "code" => 0,
                 "data" => $balanceList
