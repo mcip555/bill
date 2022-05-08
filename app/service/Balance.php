@@ -18,8 +18,12 @@ use app\model\Balance;
 class Balance extends Model
 {
     public function getBalanceByCardId($cardId){
-        $BalanceList = Balance::where('cardId',$cardId)->select();
-        return $BalanceList;
+        try{
+            $BalanceList = Balance::where('cardId',$cardId)->select();
+            return $BalanceList;
+        }catch(Exception $e){
+            return $e;
+        }
     }
 
 }
