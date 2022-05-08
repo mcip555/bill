@@ -11,10 +11,8 @@
 
 namespace app\controller;
 
-use Error;
 use Exception;
-use app\service\Balance;
-use think\response\Html;
+use app\model\BalanceService;
 use think\response\Json;
 use think\facade\Log;
 
@@ -38,7 +36,7 @@ class Balance
                 return json($res);
             }
             
-            $balanceList = (new Balance)->getBalanceByCardId($cardId);
+            $balanceList = (new BalanceService)->getBalanceByCardId($cardId);
             $res = [
                 "code" => 0,
                 "data" => $balanceList

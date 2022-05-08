@@ -32,11 +32,6 @@ class Index
     }
 
 
-    public function getTest():Json{
-        return Db::query("select version()");
-    }
-
-
     /**
      * 获取todo list
      * @return Json
