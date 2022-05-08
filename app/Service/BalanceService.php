@@ -9,7 +9,7 @@
 // | 作者: rangangwei<gangweiran@tencent.com>
 // +----------------------------------------------------------------------
 
-namespace app\model;
+namespace app\service;
 
 use think\Model;
 use Exception;

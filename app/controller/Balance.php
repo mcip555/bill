@@ -12,9 +12,10 @@
 namespace app\controller;
 
 use Exception;
-use app\model\BalanceService;
+use app\service\BalanceService;
 use think\response\Json;
 use think\facade\Log;
+use app\common\Util;
 
 class Balance
 {
@@ -27,11 +28,8 @@ class Balance
     public function getBalanceByCardId($cardId):Json{
         try{
             if(!$cardId){
-                $res = [
-                    "code" => -2,
-                    "data" => [],
-                    "errorMsg" => ("cardId不能为空")
-                ];
+
+                $res = Util::res(-2,[],"cardId不能为空");
                 Log::write('getBalanceByCardId:'.json_encode($res));
                 return json($res);
             }
