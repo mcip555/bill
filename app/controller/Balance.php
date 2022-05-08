@@ -12,7 +12,7 @@
 namespace app\controller;
 
 use Exception;
-use app\service\BalanceService;
+use app\model\BalanceService;
 use think\response\Json;
 use think\facade\Log;
 use app\common\Util;

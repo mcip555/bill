@@ -9,7 +9,7 @@
 // | 作者: rangangwei<gangweiran@tencent.com>
 // +----------------------------------------------------------------------
 
-namespace app\service;
+namespace app\model;
 
 use Exception;
 use app\model\Balance;
