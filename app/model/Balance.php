@@ -20,4 +20,5 @@ class Balance extends Model
     public $id;
     public $createTime;
     public $modifyTime;
+    public $cardId;
 }
