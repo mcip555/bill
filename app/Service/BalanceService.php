@@ -11,12 +11,11 @@
 
 namespace app\service;
 
-use think\Model;
 use Exception;
 use app\model\Balance;
 
 // Counters 定义数据库model
-class BalanceService extends Model
+class BalanceService
 {
     public static function getBalanceByCardId($cardId){
         try{

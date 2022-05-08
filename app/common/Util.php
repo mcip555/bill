@@ -12,11 +12,9 @@
 namespace app\common;
 
 use think\Model;
-use Exception;
-use app\model\Balance;
 
 // Counters 定义数据库model
-class Util extends Model
+class Util
 {
     public static function res($code,$data,$reason){
         return [
