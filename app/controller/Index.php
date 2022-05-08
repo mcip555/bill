@@ -13,7 +13,6 @@ namespace app\controller;
 
 use Error;
 use Exception;
-use app\model\Counters;
 use think\response\Html;
 use think\response\Json;
 use think\facade\Log;
