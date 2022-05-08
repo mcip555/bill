@@ -19,7 +19,7 @@ class BalanceService
 {
     public static function getBalanceByCardId($cardId){
         try{
-            $BalanceList = Balance::where('cardId',$cardId)->select();
+            $BalanceList = (new Balance)->where('cardId',$cardId)->select();
             return $BalanceList;
         }catch(Exception $e){
             return $e;
