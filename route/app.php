@@ -19,4 +19,4 @@ Route::post('/api/count', 'index/updateCount');
 
 Route::post('/api/test', 'index/getTest');
 
-Route::post('/api/getBalanceByCardId','Balance/getBalanceByCardId');
+Route::post('/api/getBalanceByCardId','balance/getBalanceByCardId');
