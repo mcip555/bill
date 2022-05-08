@@ -28,7 +28,6 @@ class Balance
     public function getBalanceByCardId($cardId):Json{
         try{
             if(!$cardId){
-
                 $res = Util::res(-2,[],"cardId不能为空");
                 Log::write('getBalanceByCardId:'.json_encode($res));
                 return json($res);
